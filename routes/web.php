@@ -10,17 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+// ブログ一覧画面を表示
+Route::get('/', 'BlogController@showList')->name('blogs');
+    
 
 Route::get('/messages', 'MessagesController@index');
 
 Route::post('/messages', 'MessagesController@create');
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/calendar_page','CalendarController@show');
 
