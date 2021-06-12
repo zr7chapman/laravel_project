@@ -14,7 +14,5 @@ class Blog extends Model
     [
         'title',
         'content',
-        'emotion_id',
-        'image'
     ];
 }
