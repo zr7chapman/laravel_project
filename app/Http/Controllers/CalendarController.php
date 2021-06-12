@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Http\Controllers;
@@ -21,7 +20,7 @@ class CalendarController extends Controller
         }catch(\Exception $e){
             $this->_thisMonth=new \DateTime('first day of this month');
         }
-        $this->prev=$this->_ç();
+        $this->prev=$this->_createPrevtLink();
         $this->next=$this->_createNextLink();
         $this->yearMonth = $this->_thisMonth->format('F Y');
     }
@@ -60,7 +59,7 @@ class CalendarController extends Controller
         new \DateTime('first day of' .$this->yearMonth.'+1 month')
     );
 
-    $today= new DateTime('today');
+    $today= new \DateTime('today');
     foreach ($period as $day) {
         if ($day->format('w')  ==='0') {$body .= '</tr><tr>';}
         $todayClass=($day->format('Y-m-d')===$today->format('Y-m-d'))?'today':'';
@@ -79,7 +78,6 @@ class CalendarController extends Controller
         return $head;
 
     }
-
 }
 
 ?>

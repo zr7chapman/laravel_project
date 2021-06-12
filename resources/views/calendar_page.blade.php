@@ -6,7 +6,7 @@ function h($s){
     return htmlspecialchars($s,ENT_QUOTES,'UTF-8');
 }
 
-$cal=App\Http\Controller\calendarController();
+$cal=App\Http\Controller\CalendarController();
 
 ?>
 <!doctype html>
