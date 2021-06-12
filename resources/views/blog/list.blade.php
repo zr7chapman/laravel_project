@@ -25,7 +25,7 @@
                 <th></th>
             </tr>
             @foreach($blogs as $blog)
-            <tr>
+            <!-- <tr>
                 <td>{{ $blog->id  }}</td>
                 <td><a href="/blog/{{ $blog->id }}">{{ $blog->title  }}</a></td>
                 <td></td>
@@ -36,12 +36,12 @@
                 {{ csrf_field() }}
                 <td><button type="submit" class="btn btn-primary" onclick=>削除</button></td>
                 </form>
-            </tr>
+            </tr> -->
             @endforeach
         </table>
     </div>
 </div>
-<script>
+<!-- <script>
 function checkDelete(){
     if(window.confirm('削除してよろしいですか？')){
         return true;
@@ -49,5 +49,5 @@ function checkDelete(){
         return false;
     }
 }
-</script>
+</script> -->
 @endsection
