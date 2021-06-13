@@ -37,7 +37,7 @@ class CalendarController extends Controller
         $tail=$this->_getTail();
         $body=$this->_getBody();
         $head=$this->_getHead();
-        return view('calendar.Calendar_page', [
+        return view('calendar_page', [
             'prev' => $this->prev,
             'yearMonth' => $this->yearMonth,
             'next' => $this->next,
