@@ -1,14 +1,3 @@
-<?php
-
-require 'CalendarController.php';
-
-function h($s){
-    return htmlspecialchars($s,ENT_QUOTES,'UTF-8');
-}
-
-$cal=App\Http\Controller\CalendarController();
-
-?>
 <!doctype html>
 <html lang="ja">
 
@@ -24,9 +13,9 @@ $cal=App\Http\Controller\CalendarController();
     <table>
         <thead>
             <tr>
-                <th><a href="/?t=<?php print h($cal->$prev);?>">&laquo;</a></th>
-                <th colspan="5"><?php print h($cal->$yearMonth);?></a></th>
-                <th><a href="/?t=<?php print h($cal->$next);?>">&raquo;</a></th>
+                <th><a href="?t={{ $prev }}">&laquo;</a></th>
+                <th colspan="5">{{ $yearMonth }}</a></th>
+                <th><a href="?t={{ $next }}">&raquo;</a></th>
             </tr>
         </thead>
         <tbody>
@@ -39,12 +28,11 @@ $cal=App\Http\Controller\CalendarController();
                 <td>Fri</td>
                 <td>Sat</td>
             </tr>
-
-            <?php $cal->show(); ?>
+            <tr>{!! $html !!}</tr>
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="7"><a href="/">Today</a></th>
+                <th colspan="7"><a href="?">Today</a></th>
             </tr>
         </tfoot>
     </table>
